@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-
+import {Button} from 'react-bootstrap';
+import Login from './components/Login.js';
 
 class App extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {};
-    }
-
+   
+//logic for conditional rendering
     render() { 
         return (
-            <div>Hello World</div>
+            <div className="App">
+                <Login/>
+            </div>
         )
     }
 }
