@@ -16,8 +16,7 @@ class CreateProfile extends Component{
        
     }
     handleChange(event) {
-        //this.setState({fName: event.target.value});
-        placeholder = event.target.value;
+        this.setState({[event.target.id]: event.target.value}); //[] makes key a variable
         event.preventDefault();
     }
     handleSubmit(event) {
@@ -27,11 +26,11 @@ class CreateProfile extends Component{
     render(){
         return(
         <div>
-            <form onSubmit={this.props.createProfleFunction &  alert('Hi you entered ' + this.state.fName)}>
-            <input type='text' placeholder='FirstName' firstName={this.state.fName} onChange={this.handleChange}/> 
-            {/* <input type='text' placeholder='LastName' lastName={this.state.lname} onChange={this.handleChange}/>
+            <form onSubmit={this.props.createProfleFunction}>
+            <input type='text' placeholder='FirstName' id = 'fName' onChange={this.handleChange}/> 
+            <input type='text' placeholder='LastName' id = 'lName' onChange={this.handleChange}/>
             <input type='text' placeholder='State' firstName={this.state.state} onChange={this.handleChange}/>
-            <input type="submit" bsstyle="primary" value="next" />  */}
+            <input type="submit" bsstyle="primary" value="next" /> 
             </form>
             
           </div>
