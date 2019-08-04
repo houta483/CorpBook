@@ -2,7 +2,9 @@
 
     margin: 0 auto;
     margin-top: 70px;
-    max-width: 400px;
+    max-width: 650px;
+    max-height: 250px;
     padding: 40px 40px;
-    background: #fff;
+    background: lavender;
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/back_pic/03/88/19/8457d4c36510ab4.jpg")
 }

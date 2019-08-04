@@ -62,7 +62,7 @@ class Login extends Component {
 
         if(errors === true){
             alert("You are successfully signed in...");
-            window.location.reload()   
+            this.props.loggedInFunction
         } else {
             this.setState({
                 errors: errors,
@@ -93,15 +93,13 @@ class Login extends Component {
                             <HelpBlock>{errors.password}</HelpBlock> 
                         }
                         </FormGroup>
-                        <Button type="submit" bsstyle="secondary"> Sign In</Button>
-                        <Button type="submit" bsstyle="primary">Sign-Up With LinkedIn</Button>
+                        <Button type="submit" bsstyle="secondary" onClick={this.props.loggedInFunction}> Sign In</Button>
                     </form>
                     
                 </Row>
             </div>
         )
-    } 
-    
+    }    
 }
 
 
