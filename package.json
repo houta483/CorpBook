@@ -1,12 +1,21 @@
 {
-  "name": "",
+  "name": "hi",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/server.js",
     "build": "webpack --env.NODE_ENV=production",
-    "dev": "webpack-dev-server --hot --open --env.NODE_ENV=development & nodemon server/server.js"
+    "dev": "webpack-dev-server --open --hot --env.NODE_ENV=development & nodemon server/server.js"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
   },
   "nodemonConfig": {
     "ignore": [
@@ -18,18 +27,25 @@
   "license": "ISC",
   "dependencies": {
     "cookie-parser": "^1.4.4",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "^4.12.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.8",
+    "bootstrap": "^4.3.1",
     "node-fetch": "^2.6.0",
     "node-sass": "^4.12.0",
     "prop-types": "^15.6.1",
     "querystring": "^0.2.0",
     "react": "^16.2.0",
+    "request": "^2.88.0",
+    "react-bootstrap": "^1.0.0-beta.10",
+    "react-bootstrap-validation": "^0.1.11",
     "react-dom": "^16.3.1",
-    "request": "^2.88.0"
+    "validator": "^11.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
@@ -38,10 +54,19 @@
     "cross-env": "^5.2.0",
     "css-loader": "^3.1.0",
     "isomorphic-fetch": "^2.2.1",
-    "nodemon": "^1.18.9",
+    "nodemon": "^1.19.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.38.0",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.7.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/houta483/CorpBook.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/houta483/CorpBook/issues"
+  },
+  "homepage": "https://github.com/houta483/CorpBook#readme"
 }
