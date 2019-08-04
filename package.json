@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "nodemon server/server.js",
     "build": "webpack --env.NODE_ENV=production",
-    "dev": "webpack-dev-server --open --env.NODE_ENV=development & node server/server.js"
+    "dev": "webpack-dev-server --hot --open --env.NODE_ENV=development & nodemon server/server.js"
   },
   "nodemonConfig": {
     "ignore": [
@@ -17,11 +17,16 @@
   "author": "Team MacGonagall",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
     "express": "^4.12.3",
+    "node-fetch": "^2.6.0",
     "node-sass": "^4.12.0",
     "prop-types": "^15.6.1",
+    "querystring": "^0.2.0",
     "react": "^16.2.0",
-    "react-dom": "^16.3.1"
+    "react-dom": "^16.3.1",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
