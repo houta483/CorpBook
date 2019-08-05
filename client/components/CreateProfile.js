@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './CreateProfile.css'
-let placeholder;
+
 class CreateProfile extends Component{
     
     constructor(props){
@@ -20,16 +20,18 @@ class CreateProfile extends Component{
         event.preventDefault();
     }
     handleSubmit(event) {
-        this.setState({validZip:true});
+        alert('The fname is ' + this.state.fName + ' and the last name is' + this.state.lName)
+        this.props.createProfleFunction()
         event.preventDefault();
     }
     render(){
         return(
-        <div>
-            <form onSubmit={this.props.createProfleFunction}>
+        <div className='ba ph0 mh0 bg-light-blue' id = 'submitform'>
+            <h1 className='bg-silver tc'>Welcome INSERT NAME HERE</h1>
+            <form className = 'measure center ' onSubmit={this.handleSubmit}>
             <input type='text' placeholder='FirstName' id = 'fName' onChange={this.handleChange}/> 
             <input type='text' placeholder='LastName' id = 'lName' onChange={this.handleChange}/>
-            <input type='text' placeholder='State' firstName={this.state.state} onChange={this.handleChange}/>
+            <input type='text' placeholder='State' id='State' onChange={this.handleChange}/>
             <input type="submit" bsstyle="primary" value="next" /> 
             </form>
             
