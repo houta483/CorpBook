@@ -15,6 +15,18 @@ const profileSchema = new Schema({
   CurrentPosition: {
     type: String,
   },
+  MyersBriggs: {
+    type: String
+  },
+  TemperamentTest: {
+    type: String
+  },
+  AttitudeTest: {
+    type: String
+  },
+  KolbeTest: {
+    type: String
+  },
   PastCompanies: {
     type: String,
   },
@@ -48,7 +60,6 @@ const profileSchema = new Schema({
   WeirdThingIKnowAboutSomeoneInTheOffice: {
     type: String
   }
-
 })
 
 module.exports = mongoose.model("profile", profileSchema)
