@@ -71,6 +71,7 @@ authenticate(req, res, next) {
             let country = data.lastName.preferredLocale.country;
             let language = data.lastName.preferredLocale.language;
             let id = data.id;
+         //   res.cookie("userId", id);
     
             res.locals.doc = { firstName, lastName, country, language, id } ;
             console.log(res.locals)

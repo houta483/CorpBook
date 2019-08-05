@@ -27,6 +27,7 @@ const LoginController = {
     },
 
     loginToHome(req, res, next){
+       // res.json(res.locals.doc);
         res.redirect('/');
     }
 

@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const querystring = require('querystring');
+//const querystring = require('querystring');
 const cors = require('cors');
-const request = require('request');
-const fetch = require('node-fetch');
+// const request = require('request');
+// const fetch = require('node-fetch');
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 
@@ -22,11 +22,7 @@ app.use('/build', express.static(path.join(__dirname, '../build')));
 app.use(express.static(__dirname + '/index.html'))
    .use(cors())
    .use(cookieParser());
-
-app.get('/api/leaders', (req, res) => {
-  res.send(leaderList);
-  });   
-
+  
 //OAuth Route handlers  
 
 const loginRouter = express.Router();
@@ -41,14 +37,13 @@ app.use('/linkedin/callback', authRouter);
 
 authRouter.get('/', authenticationController.authenticate, taskController.createAccount, loginController.loginToHome, (req, res, next) => {
   console.log(res.locals.doc)
+ 
   res.status(200)
 })
 
 
 // serve index.html on the route '/'
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../index.html'));
-});
+
 
 
 //DATABASE SETUP --------------
@@ -68,7 +63,7 @@ userRouter.post('/', taskController.createAccount, (req, res) => {
 });
 
 userRouter.get('/:name', taskController.getUser, (req, res) => {
-  res.status(200).send(res.locals.doc)
+  res.status(200).json(res.locals.doc)
 });
 
 userRouter.patch('/:name', taskController.changeUser, (req, res) => {
@@ -84,6 +79,10 @@ app.use('/user', userRouter)
 
 app.use((err, req, res, next) => 
   res.status(418).end());
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../index.html'));
+  });
 
 
 
