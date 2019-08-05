@@ -2,7 +2,24 @@ const User = require("../models/userSchema");
 
 const TaskController = {
   createAccount(req, res, next) {
-    User.create(req.body, (err, doc) => {
+    const firstName = res.locals.doc.firstName;
+    const lastName = res.locals.doc.lastName;
+    const country = res.locals.doc.country;
+    const id = res.locals.doc.id;
+    const language = res.locals.doc.language;
+    const imageURL = res.locals.doc.imageURL;
+
+    const newUser = {
+      firstName,
+      lastName,
+      country,
+      id,
+      language,
+      imageURL
+    }
+
+
+    User.create(newUser, (err, doc) => {
       if (err) {
         next(err);
       } else {
@@ -16,7 +33,7 @@ const TaskController = {
   getUser(req, res, next) {
     const { name } = req.params;
 
-    User.find({ username: name }, (err, doc) => {
+    User.find({ firstName: name }, (err, doc) => {
       if (err || !doc[0]) {
         next('Cannot get user');
       } else {
@@ -24,8 +41,22 @@ const TaskController = {
         next();
       }
     })
-  },
+    //res.send(res.locals.doc);
+   },
 
+   getAllUsers(req, res, next) {
+  
+    User.find({}, (err, doc) => {
+      if (err || !doc[0]) {
+        next('Cannot get user');
+      } else {
+        res.locals.doc = doc;
+        next();
+      }
+    })
+    //res.send(res.locals.doc);
+   },
+  
   changeUser(req, res, next) {
     const { name } = req.params;
 
