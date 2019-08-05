@@ -27,11 +27,11 @@ class CreateProfile extends Component{
     render(){
         return(
         <div>
-            <form onSubmit={this.props.createProfleFunction &  alert('Hi you entered ' + this.state.fName)}>
+            <form onSubmit={this.props.createProfleFunction}>
             <input type='text' placeholder='FirstName' firstName={this.state.fName} onChange={this.handleChange}/> 
             {/* <input type='text' placeholder='LastName' lastName={this.state.lname} onChange={this.handleChange}/>
-            <input type='text' placeholder='State' firstName={this.state.state} onChange={this.handleChange}/>
-            <input type="submit" bsstyle="primary" value="next" />  */}
+            <input type='text' placeholder='State' firstName={this.state.state} onChange={this.handleChange}/> */}
+            <input type="submit" bsstyle="primary" value="next" /> 
             </form>
             
           </div>
