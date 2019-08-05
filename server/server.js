@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const querystring = require('querystring');
+//const querystring = require('querystring');
 const cors = require('cors');
-const request = require('request');
-const fetch = require('node-fetch');
+// const request = require('request');
+// const fetch = require('node-fetch');
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 
