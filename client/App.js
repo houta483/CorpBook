@@ -23,7 +23,6 @@ class App extends Component {
         this.setState({login:false, createProfile:true})
     }
     createProfleFunction(){
-        alert("we used createProfileFun")
         this.setState({createProfile:false, homePage:true})
     }
     render() { 
@@ -50,7 +49,6 @@ class App extends Component {
         }
 
         if(this.state.createProfile){
-            alert("going to create profile")
             return (
                 <div className="App bg-light-yellow">
                     <CreateProfile createProfleFunction = {this.createProfleFunction}/>
@@ -69,7 +67,7 @@ class App extends Component {
         /*Working on only */
         // return(
         //     <div className="App bg-light-yellow">
-        //         <HomePage/>
+        //         <CreateProfile/>
         //     </div>
         // )
     }
