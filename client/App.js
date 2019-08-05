@@ -29,47 +29,47 @@ class App extends Component {
         //login if cookies exist
         //if cookies exist go into CreateProfile
    
-        if(this.state.login){          
-            if(this.state.cookies){
-                this.loggedInFunction();
-                return (
-                    <div className="App bg-light-yellow">
-                        <CreateProfile createProfleFunction = {this.createProfleFunction}/>
-                    </div>
-                )
-            }
+        // if(this.state.login){          
+        //     if(this.state.cookies){
+        //         this.loggedInFunction();
+        //         return (
+        //             <div className="App bg-light-yellow">
+        //                 <CreateProfile createProfleFunction = {this.createProfleFunction}/>
+        //             </div>
+        //         )
+        //     }
 
-        else{
-            return (
-                <div className="App bg-light-yellow">
-                    <Login loggedInFunction = {this.loggedInFunction}/>
-                </div>
-            )
-        }
-        }
+        // else{
+        //     return (
+        //         <div className="App bg-light-yellow">
+        //             <Login loggedInFunction = {this.loggedInFunction}/>
+        //         </div>
+        //     )
+        // }
+        // }
 
-        if(this.state.createProfile){
-            return (
-                <div className="App bg-light-yellow">
-                    <CreateProfile createProfleFunction = {this.createProfleFunction}/>
-                </div>
-            )
-        }
+        // if(this.state.createProfile){
+        //     return (
+        //         <div className="App bg-light-yellow">
+        //             <CreateProfile createProfleFunction = {this.createProfleFunction}/>
+        //         </div>
+        //     )
+        // }
 
-        if(this.state.homePage){
-            return (
-                <div className="App bg-light-yellow">
-                    <HomePage/>
-                </div>
-            )
-        }
+        // if(this.state.homePage){
+        //     return (
+        //         <div className="App bg-light-yellow">
+        //             <HomePage/>
+        //         </div>
+        //     )
+        // }
 
         /*Working on only */
-        // return(
-        //     <div className="App bg-light-yellow">
-        //         <CreateProfile/>
-        //     </div>
-        // )
+        return(
+            <div className="App bg-light-yellow">
+                <HomePage/>
+            </div>
+        )
     }
 }
 
