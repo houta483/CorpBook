@@ -2,7 +2,24 @@ const User = require("../models/userSchema");
 
 const TaskController = {
   createAccount(req, res, next) {
-    User.create(req.body, (err, doc) => {
+    const firstName = res.locals.doc.firstName;
+    const lastName = res.locals.doc.lastName;
+    const country = res.locals.doc.country;
+    const id = res.locals.doc.id;
+    const language = res.locals.doc.language;
+    const imageURL = res.locals.doc.imageURL;
+
+    const newUser = {
+      firstName,
+      lastName,
+      country,
+      id,
+      language,
+      imageURL
+    }
+
+
+    User.create(newUser, (err, doc) => {
       if (err) {
         next(err);
       } else {
