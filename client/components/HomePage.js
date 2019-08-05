@@ -8,7 +8,7 @@ const urls = ['https://media.licdn.com/dms/image/C4E03AQHOMZg1CciNww/profile-dis
 'https://media.licdn.com/dms/image/C4D03AQFmD1B7L-NyDg/profile-displayphoto-shrink_800_800/0?e=1570665600&v=beta&t=iJF1YP14DJCUMA-dVsC7GvweyB_Mx4Ue12Ht-tAslZQ',
 'https://media.licdn.com/dms/image/C5603AQGUwZlmkb2hEQ/profile-displayphoto-shrink_800_800/0?e=1570665600&v=beta&t=rbanoTOd1UvsOfnBCL9kiCaAYZceED4mJ0Z1lnjBX4Q'
 ];
-const companies = ['google', 'amazon','codesmith']
+const companies = ['Google', 'Amazon','Codesmith']
 const profiles = [
     {name:names[0], url:urls[0], company:companies[0]}, 
     {name:names[1], url:urls[1], company:companies[1]}, 
