@@ -9,12 +9,16 @@ const urls = ['https://media.licdn.com/dms/image/C4E03AQHOMZg1CciNww/profile-dis
 'https://media.licdn.com/dms/image/C5603AQGUwZlmkb2hEQ/profile-displayphoto-shrink_800_800/0?e=1570665600&v=beta&t=rbanoTOd1UvsOfnBCL9kiCaAYZceED4mJ0Z1lnjBX4Q'
 ];
 const companies = ['Google', 'Amazon','Codesmith']
+
+
 const profiles = [
     {name:names[0], url:urls[0], company:companies[0]}, 
     {name:names[1], url:urls[1], company:companies[1]}, 
     {name:names[2], url:urls[2], company:companies[2]}
     
 ]
+
+
 class HomePage extends Component{
     constructor(props){
         super(props);
