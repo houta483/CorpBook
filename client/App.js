@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-
 import Login from './components/Login.js';
 import CreateProfile from './components/CreateProfile.js'
 import HomePage from './components/HomePage'
+import Cookies from 'js-cookie';
+import 'tachyons';
 class App extends Component {
     constructor(props) {
         super(props);
@@ -10,6 +11,7 @@ class App extends Component {
             login:true,
             createProfile:false,
             homePage:false,
+            cookies: Cookies.get('access_token')
         };
         this.loggedInFunction = this.loggedInFunction.bind(this);
         this.createProfleFunction = this.createProfleFunction.bind(this);
@@ -21,33 +23,53 @@ class App extends Component {
         this.setState({login:false, createProfile:true})
     }
     createProfleFunction(){
-        alert("we used createProfileFun")
         this.setState({createProfile:false, homePage:true})
     }
     render() { 
+        //login if cookies exist
+        //if cookies exist go into CreateProfile
+   
+        // if(this.state.login){          
+        //     if(this.state.cookies){
+        //         this.loggedInFunction();
+        //         return (
+        //             <div className="App bg-light-yellow">
+        //                 <CreateProfile createProfleFunction = {this.createProfleFunction}/>
+        //             </div>
+        //         )
+        //     }
 
-        if(this.state.login){
-            return (
-                <div className="App">
-                    <Login loggedInFunction = {this.loggedInFunction}/>
-                </div>
-            )
-        }
-        if(this.state.createProfile){
-            alert("going to create profile")
-            return (
-                <div className="App">
-                    <CreateProfile createProfleFunction = {this.createProfleFunction}/>
-                </div>
-            )
-        }
-        if(this.state.homePage){
-            return (
-                <div className="App">
-                    <HomePage/>
-                </div>
-            )
-        }
+        // else{
+        //     return (
+        //         <div className="App bg-light-yellow">
+        //             <Login loggedInFunction = {this.loggedInFunction}/>
+        //         </div>
+        //     )
+        // }
+        // }
+
+        // if(this.state.createProfile){
+        //     return (
+        //         <div className="App bg-light-yellow">
+        //             <CreateProfile createProfleFunction = {this.createProfleFunction}/>
+        //         </div>
+        //     )
+        // }
+
+        // if(this.state.homePage){
+        //     return (
+        //         <div className="App bg-light-yellow">
+        //             <HomePage/>
+        //         </div>
+        //     )
+        // }
+
+        /*Working on only */
+        return(
+            <div className="App bg-light-yellow">
+                <HomePage/>
+            </div>
+        )
     }
 }
 
